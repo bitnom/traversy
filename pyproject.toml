@@ -7,7 +7,8 @@ readme = "README.md"
 authors = ["Tom A. <14287229+TensorTom@users.noreply.github.com>"]
 homepage = "https://github.com/tensortom/traversy"
 repository = "https://github.com/tensortom/traversy"
-keywords = ["python", "socks", "aiohttp", "requests", "python3", "socks5", "proxies", "rotate", "actproxy"]
+keywords = ["python", "python3", "traversal", "traverse", "recursive", "iteration", "generator", "dict", "dictionary",
+    "data", "mo-dots", "dotty_dict", "iterate", "iterator"]
 
 [tool.poetry.dependencies]
 python = "^3.9.0"
