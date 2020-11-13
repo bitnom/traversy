@@ -7,7 +7,7 @@ Traverse deep data structures such as dict, mo-dots, and
 dotty_dict. Supports nested lists & data.
 
 ```python
-from traversy import traverse, set_output_format
+from traversy import traverse
 import json
 
 
@@ -63,4 +63,6 @@ License: MIT
 
 ### Changelog
 
-- **11/13/2020** - Deprecated `set_output_format()` and made package compatible with both Python 2 and Python 3.
+- **11/13/2020 - 0.1.2** : Doc correction.
+
+- **11/13/2020 - 0.1.1** : Deprecated `set_output_format()` and made package compatible with both Python 2 and Python 3.
