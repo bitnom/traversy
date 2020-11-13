@@ -41,7 +41,6 @@ jo = json.loads("""{
 def is_eq(key, val, opath, query):
     return val == query
 
-set_output_format('mo-dots')  # Can be dict (Default), mo-dots, or dotty_dict
 
 for node in traverse(jo, is_eq, query="milk"):
     print("Found", node.key, ':', node.value)  # baz : milk
@@ -52,7 +51,7 @@ For each iteration, traverse() returns a dict or data object of...
 
 ```
 {'key', 'value', 'node_path', 'path_str', 'filter_func',
-'filter_args': (data, kwargs), 'parent_node'}
+'filter_args': (data, kwargs), 'parent_node', 'output_formatter'}
 ```
 
 For more information on these non-built-in data structure (Which are optional
@@ -60,3 +59,8 @@ to use), check out [mo-dots](https://pypi.org/project/mo-dots/) and
 [dotty_dict](https://pypi.org/project/dotty-dict/).
 
 License: MIT
+
+
+### Changelog
+
+- **11/13/2020** - Deprecated `set_output_format()` and made package compatible with both Python 2 and Python 3.
