@@ -3,9 +3,17 @@ from dotty_dict import Dotty
 import copy
 
 
-def traverse(data, filter_func=None, node_path=None,
-             parent_node=None, output_formatter=dict,
-             **kwargs):
+def func(var):
+	return var
+
+
+def bool_func(*args, **kwargs):
+	return True
+
+
+def traverse(data, filter_func=bool_func, node_path=None,
+             parent_node=None, output_formatter=func,
+             val_transformer=func, **kwargs):
 	"""
 	Traverse deep data structures such as dict, mo-dots, and dotty_dict. Supports
 	nested lists & data.
@@ -13,8 +21,8 @@ def traverse(data, filter_func=None, node_path=None,
 		:param filter_func: Callback function which returns a boolean filter.
 		:param node_path: Path to start from.
 		:param parent_node: Parent of starting node.
-		:param output_formatter: Function applied to return such as dict (Default),
-				to_data (mo-dots), dotty_dict (dotty-dict)
+		:param output_formatter: Function applied to entire return dict.
+		:param val_transformer: Apply func to yielded return val.
 		:param kwargs: All extra keyword args are sent to the filter_func()
 		:return:
 	"""
@@ -26,24 +34,20 @@ def traverse(data, filter_func=None, node_path=None,
 			local_path.append(x)
 			yield from traverse(data[x], filter_func=filter_func, node_path=local_path,
 			                    parent_node=data, output_formatter=output_formatter,
-			                    **kwargs)
+			                    val_transformer=val_transformer, **kwargs)
 	elif isinstance(data, (list, FlatList)):
 		for x, y in enumerate(data):
 			local_path = node_path[:]
 			local_path.append(x)
 			yield from traverse(data[x], filter_func=filter_func, node_path=local_path,
 			                    parent_node=data, output_formatter=output_formatter,
-			                    **kwargs)
-	elif filter_func is None:
-		key = node_path[-1:][0] if len(node_path[-1:]) > 0 else ''
-		yield output_formatter({'key': key, 'value': data, 'node_path': node_path, 'path_str': path_str,
-		                        'filter_func': None, 'filter_args': None, 'parent_node': parent_node,
-		                        'output_formatter': output_formatter.__name__})
+			                    val_transformer=val_transformer, **kwargs)
 	elif filter_func(node_path[-1:], data, node_path, **kwargs):
 		key = node_path[-1:][0] if len(node_path[-1:]) > 0 else ''
-		yield output_formatter({'key': key, 'value': data, 'node_path': node_path, 'path_str': path_str,
-		                        'filter_func': filter_func.__name__, 'filter_args': (data, kwargs),
-		                        'parent_node': parent_node, 'output_formatter': output_formatter.__name__})
+		yield output_formatter({'key': key, 'value': val_transformer(data), 'node_path': node_path,
+		                        'path_str': path_str, 'filter_func': filter_func.__name__,
+		                        'filter_args': (data, kwargs), 'parent_node': parent_node,
+		                        'output_formatter': output_formatter.__name__})
 
 
 def duplicate(data):
