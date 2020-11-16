@@ -2,7 +2,7 @@
 
 Fast data traversal & manipulation tools for Python.
 
-`traverse()`: 
+`traverse(data)`: 
 Traverse deep data structures such as dict, mo-dots, and
 dotty_dict. Supports nested lists & data.
 
@@ -38,7 +38,7 @@ jo = json.loads("""{
   }
 }""")
 
-def is_eq(key, val, opath, query):
+def is_eq(key, val, opath, query):  # Use of a filter func is optional.
     return val == query
 
 
@@ -62,6 +62,8 @@ License: MIT
 
 
 ### Changelog
+
+- **11/15/2020 - 0.1.3** : Refactored & added more utility methods.
 
 - **11/13/2020 - 0.1.2** : Doc correction.
 

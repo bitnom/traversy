@@ -7,11 +7,11 @@ def func(var):
 	return var
 
 
-def bool_func(*args, **kwargs):
+def return_all(*args, **kwargs):
 	return True
 
 
-def traverse(data, filter_func=bool_func, node_path=None,
+def traverse(data, filter_func=return_all, node_path=None,
              parent_node=None, output_formatter=func,
              val_transformer=func, **kwargs):
 	"""
