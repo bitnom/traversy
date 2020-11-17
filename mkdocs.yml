@@ -1,0 +1,14 @@
+site_name: traversy
+repo_url: https://github.com/TensorTom/traversy
+site_author: Tom A.
+site_description: Fast data traversal & manipulation tools for Python.
+
+theme:
+  name: "material"
+
+plugins:
+  - search
+  - mkdocstrings:
+      watch:
+        - datafunc/
+      custom_templates: docs/templates

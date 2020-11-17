@@ -69,3 +69,5 @@ to use), check out [mo-dots](https://pypi.org/project/mo-dots/) and
 - **11/13/2020 - 0.1.2** : Doc correction.
 
 - **11/13/2020 - 0.1.1** : Deprecated `set_output_format()` and made package compatible with both Python 2 and Python 3.
+
+::: traversy

@@ -7,6 +7,7 @@ readme = "README.md"
 authors = ["Tom A. <14287229+TensorTom@users.noreply.github.com>"]
 homepage = "https://github.com/tensortom/traversy"
 repository = "https://github.com/tensortom/traversy"
+documentation = "https://tensortom.github.io/traversy/"
 keywords = ["python", "python3", "traversal", "traverse", "recursive", "iteration", "generator", "dict", "dictionary",
     "data", "mo-dots", "dotty_dict", "iterate", "iterator"]
 
