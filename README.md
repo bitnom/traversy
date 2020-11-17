@@ -1,6 +1,6 @@
 # traversy
 
-Fast data traversal & manipulation tools for Python.Check out the
+Fast data traversal & manipulation tools for Python. Check out the
 [documentation](https://tensortom.github.io/traversy/).
 
 [![Actively Maintained](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://gitHub.com/TensorTom/traversy/graphs/commit-activity)
