@@ -64,6 +64,8 @@ to use), check out [mo-dots](https://pypi.org/project/mo-dots/) and
 
 ### Changelog
 
+- **11/15/2020 - 0.1.32** : Fix for pypi.
+
 - **11/15/2020 - 0.1.3** : Refactored & added more utility methods.
 
 - **11/13/2020 - 0.1.2** : Doc correction.
