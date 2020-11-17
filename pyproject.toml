@@ -11,11 +11,16 @@ keywords = ["python", "python3", "traversal", "traverse", "recursive", "iteratio
     "data", "mo-dots", "dotty_dict", "iterate", "iterator"]
 
 [tool.poetry.dependencies]
-python = "*"
+python = ">=3.6,<4.0.0"
 mo-dots = ">=3.135.20303"
 dotty-dict = ">=1.3.0"
 
 [tool.poetry.dev-dependencies]
+mkdocs = "^1.1.2"
+mkdocs-material = "^6.1.5"
+mkdocstrings = "^0.13.6"
+pydoc-markdown = "^3.8.0"
+dephell = "^0.8.3"
 
 [build-system]
 requires = ["poetry>=0.12"]
