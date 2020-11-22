@@ -32,6 +32,7 @@ def traverse(data: Union[Dict, Data, DataObject, Dotty, List, FlatList],
 	"""
 	node_path = [] if node_path is None else node_path
 	path: AnyStr = '.'.join([str(n) for n in node_path])
+	key: AnyStr = node_path[-1:][0] if node_path is not None and len(node_path[-1:]) > 0 else ''
 	if dictlike(data):
 		for x in data.keys():
 			local_path: List = node_path[:]
@@ -46,8 +47,7 @@ def traverse(data: Union[Dict, Data, DataObject, Dotty, List, FlatList],
 			yield from traverse(data[x], filter_func=filter_func, node_path=local_path,
 			                    parent_node=data, output_formatter=output_formatter,
 			                    val_transformer=val_transformer, **kwargs)
-	elif filter_func(node_path[-1:], data, node_path, **kwargs):
-		key: AnyStr = node_path[-1:][0] if len(node_path[-1:]) > 0 else ''
+	elif filter_func(key, data, node_path, **kwargs):
 		yield output_formatter({'key': key, 'value': val_transformer(data), 'node_path': node_path,
 		                        'path': path, 'filter_func': filter_func.__name__,
 		                        'filter_args': (data, kwargs), 'parent_node': parent_node,
