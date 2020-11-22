@@ -21,7 +21,8 @@ def traverse(data: Union[Dict, Data, DataObject, Dotty, List, FlatList],
 	Traverse deep data structures such as dict, mo-dots, and dotty_dict. Supports
 	nested lists & data.
 		:param data: Data dict or object to traverse
-		:param filter_func: Callback function which returns a boolean filter.
+		:param filter_func: Callback function like filter(key, data, node_path, **kwargs)
+				which must return a boolean filter.
 		:param node_path: Path to start from.
 		:param parent_node: Parent of starting node.
 		:param output_formatter: Function applied to entire return dict.

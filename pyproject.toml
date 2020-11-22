@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "traversy"
-version = "0.1.32"
+version = "0.1.4"
 description = "Fast data traversal & manipulation tools."
 license = "MIT"
 readme = "README.md"
