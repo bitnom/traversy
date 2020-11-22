@@ -88,6 +88,19 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "datafunc"
+version = "0.0.4"
+description = "Python functions for various dict, list, and other data structures."
+category = "main"
+optional = false
+python-versions = ">=3.6,<4.0"
+
+[package.dependencies]
+dotty-dict = "*"
+mo-dots = "*"
+traversy = ">=0.1.2"
+
+[[package]]
 name = "dephell"
 version = "0.8.3"
 description = "Dependency resolution for Python"
@@ -1017,7 +1030,7 @@ testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.6,<4.0.0"
-content-hash = "eb62f154ba6827e22aef9b1ea51e1c4a73a02db12ebff2ccb094590617338b3b"
+content-hash = "8bf0d04d45bd56e6a3108fb4da866b8c104362a5d53312c36ca1b4c4e16dbcd8"
 
 [metadata.files]
 aiohttp = [
@@ -1082,6 +1095,10 @@ chardet = [
 click = [
     {file = "click-7.1.2-py2.py3-none-any.whl", hash = "sha256:dacca89f4bfadd5de3d7489b7c8a566eee0d3676333fbb50030263894c38c0dc"},
     {file = "click-7.1.2.tar.gz", hash = "sha256:d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a"},
+]
+datafunc = [
+    {file = "datafunc-0.0.4-py3-none-any.whl", hash = "sha256:f48a2c2849e380d5c1c0ad3004eb7096f998fefe81e3565cfe7356bc618dfbaf"},
+    {file = "datafunc-0.0.4.tar.gz", hash = "sha256:8fee6985e92105cdb4fce5bbb276b8daac4c6ba55010859431f0c107c629379d"},
 ]
 dephell = [
     {file = "dephell-0.8.3-py3-none-any.whl", hash = "sha256:3ca3661e2a353b5c67c77034b69b379e360d4c70ce562e8161db32d39064be5a"},
